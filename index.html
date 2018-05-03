@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="quiz">
+        <div class="quiz">
+           <transition name="slide">
+            <div class="quiz__item" 
+               v-for="(item, index) in quiz"
+               v-if="index == currentQuestion"
+               :key="index">
+                <div class="quiz__item-header">
+                    <h1 class="title">
+                        {{item.title}}
+                    </h1>
+                </div>
+                <div class="counter">
+                    #{{index + 1}}
+                </div>
+                <div class="quiz__item-main">
+                    <button class="button" 
+                     @click="currentAnswer = 1, checkIsTrue(index)">
+                      {{item.option1}}
+                    </button>
+                    <button class="button" 
+                     @click="currentAnswer = 2, checkIsTrue(index)">
+                      {{item.option2}}
+                    </button>
+                    <button class="button" 
+                     @click="currentAnswer = 3, checkIsTrue(index)">
+                      {{item.option3}}
+                    </button>
+                    <button class="button" 
+                     @click="currentAnswer = 4, checkIsTrue(index)">
+                      {{item.option4}}
+                    </button>
+                </div>
+                <div class="quiz__item-footer">
+                    {{score}}
+                </div>
+            </div>
+            </transition>
+            <transition name="score">
+                <div class="total"
+                   v-if="currentQuestion == 10">
+                    Your score is {{score}}
+                    {{scoreText}}
+                </div>
+            </transition>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="script/script.js"></script>
+
+</html>

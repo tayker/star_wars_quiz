@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Pangolin");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: 'Pangolin', cursive; }
+
+.button {
+  padding: 5px 10px;
+  background-color: #ff4c4c;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  font-family: inherit;
+  letter-spacing: 2px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 120px; }
+  .button:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.2);
+    left: -20px;
+    bottom: 0;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  .button:hover {
+    color: #003666; }
+    .button:hover:before {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      left: 0;
+      z-index: 0; }
+
+.quiz {
+  max-width: 600px;
+  margin: auto;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  height: 500px; }
+  .quiz__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative; }
+    .quiz__item .counter {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    .quiz__item-main {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      margin-bottom: 20px; }
+    .quiz__item-footer {
+      font-size: 42px; }
+
+.total {
+  position: absolute;
+  left: 50%;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+.slide-enter-active,
+.slide-leave-active {
+  position: absolute;
+  width: calc(100% - 30px);
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  left: 15px; }
+
+.slide-enter,
+.slide-leave-to {
+  left: 100%; }
+
+.slide-leave-to {
+  -webkit-transform: rotatex(90deg);
+      -ms-transform: rotatex(90deg);
+          transform: rotatex(90deg); }
+
+.score-enter-active,
+.score-leave-active {
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2); }
+
+.score-enter,
+.score-leave-to {
+  -webkit-transform: scale(0.2);
+      -ms-transform: scale(0.2);
+          transform: scale(0.2); }
+
+/*# sourceMappingURL=style.css.map */
